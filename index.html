@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Haveli | Fine Dining Restaurant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <h2 class="logo">The Haveli</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#order">Order Online</a>
+      <a href="#cart">Cart</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="header home-bg">
+      <div class="header-content">
+        <div class="header-left">
+          <h1 class="brand-name">The Haveli</h1>
+          <p class="tagline">Where Royal Taste Meets Modern Dining</p>
+        </div>
+        <div class="header-right">
+          <img src="images/haveli.jpg" alt="The Haveli Restaurant">
+        </div>
+      </div>
+
+      <div class="service-type">
+        <label><input type="radio" name="service" value="dining" checked> Dine-In</label>
+        <label><input type="radio" name="service" value="delivery"> Home Delivery</label>
+      </div>
+
+      <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cartCount">0</span>
+      </div>
+    </header>
+
+    <section id="about" class="section about-bg">
+      <div class="overlay-box">
+        <h2>About The Haveli</h2>
+        <p>
+          Welcome to <strong>The Haveli</strong>, where tradition meets taste. We bring you
+          the rich flavors of Indian royalty, the elegance of Continental cuisine,
+          and the bold zest of Chinese dishes — all under one roof.
+        </p>
+        <p>
+          Step into a royal ambience, enjoy warm hospitality, and let every meal feel
+          like a celebration.
+        </p>
+      </div>
+    </section>
+
+    <section id="menu" class="section menu-bg">
+      <div class="overlay-box">
+        <h2>Our Menu</h2>
+
+        <div class="category-filters">
+          <button onclick="filterCategory('all')">All</button>
+          <button onclick="filterCategory('breakfast')">Breakfast</button>
+          <button onclick="filterCategory('starter')">Starters</button>
+          <button onclick="filterCategory('main')">Main Course</button>
+          <button onclick="filterCategory('soup')">Soups</button>
+          <button onclick="filterCategory('dessert')">Desserts</button>
+        </div>
+
+        <div class="menu-items">
+
+          <div class="menu-item breakfast">
+            <span>Masala Dosa</span><span>₹120</span><button onclick="addToCart('Masala Dosa', 120)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Plain Dosa</span><span>₹100</span><button onclick="addToCart('Plain Dosa', 100)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Idli Sambar</span><span>₹90</span><button onclick="addToCart('Idli Sambar', 90)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Aloo Paratha</span><span>₹110</span><button onclick="addToCart('Aloo Paratha', 110)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Paneer Paratha</span><span>₹130</span><button onclick="addToCart('Paneer Paratha', 130)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Upma</span><span>₹80</span><button onclick="addToCart('Upma', 80)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Poha</span><span>₹70</span><button onclick="addToCart('Poha', 70)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Veg Omelette</span><span>₹90</span><button onclick="addToCart('Veg Omelette', 90)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Chicken Omelette</span><span>₹110</span><button onclick="addToCart('Chicken Omelette', 110)">Add</button>
+          </div>
+          <div class="menu-item breakfast">
+            <span>Sandwich</span><span>₹80</span><button onclick="addToCart('Sandwich', 80)">Add</button>
+          </div>
+
+          <div class="menu-item starter">
+            <span>Paneer Tikka</span><span>₹220</span><button onclick="addToCart('Paneer Tikka', 220)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Chicken Tikka</span><span>₹260</span><button onclick="addToCart('Chicken Tikka', 260)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Veg Spring Roll</span><span>₹150</span><button onclick="addToCart('Veg Spring Roll', 150)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Chicken Spring Roll</span><span>₹180</span><button onclick="addToCart('Chicken Spring Roll', 180)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Paneer Pakora</span><span>₹140</span><button onclick="addToCart('Paneer Pakora', 140)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Chicken Pakora</span><span>₹170</span><button onclick="addToCart('Chicken Pakora', 170)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Veg Cutlet</span><span>₹120</span><button onclick="addToCart('Veg Cutlet', 120)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Fish Fingers</span><span>₹200</span><button onclick="addToCart('Fish Fingers', 200)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Chilli Paneer</span><span>₹210</span><button onclick="addToCart('Chilli Paneer', 210)">Add</button>
+          </div>
+          <div class="menu-item starter">
+            <span>Chilli Chicken</span><span>₹240</span><button onclick="addToCart('Chilli Chicken', 240)">Add</button>
+          </div>
+
+          <div class="menu-item main">
+            <span>Butter Chicken</span><span>₹280</span><button onclick="addToCart('Butter Chicken', 280)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Chicken Biryani</span><span>₹300</span><button onclick="addToCart('Chicken Biryani', 300)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Mutton Rogan Josh</span><span>₹350</span><button onclick="addToCart('Mutton Rogan Josh', 350)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Paneer Butter Masala</span><span>₹240</span><button onclick="addToCart('Paneer Butter Masala', 240)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Dal Makhani</span><span>₹200</span><button onclick="addToCart('Dal Makhani', 200)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Veg Biryani</span><span>₹240</span><button onclick="addToCart('Veg Biryani', 240)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Fish Curry</span><span>₹320</span><button onclick="addToCart('Fish Curry', 320)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Chicken Korma</span><span>₹290</span><button onclick="addToCart('Chicken Korma', 290)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Veg Kadai</span><span>₹220</span><button onclick="addToCart('Veg Kadai', 220)">Add</button>
+          </div>
+          <div class="menu-item main">
+            <span>Egg Curry</span><span>₹210</span><button onclick="addToCart('Egg Curry', 210)">Add</button>
+          </div>
+
+          <div class="menu-item soup">
+            <span>Tomato Soup</span><span>₹120</span><button onclick="addToCart('Tomato Soup', 120)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Sweet Corn Soup</span><span>₹150</span><button onclick="addToCart('Sweet Corn Soup', 150)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Hot & Sour Veg Soup</span><span>₹140</span><button onclick="addToCart('Hot & Sour Veg Soup', 140)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Hot & Sour Chicken Soup</span><span>₹170</span><button onclick="addToCart('Hot & Sour Chicken Soup', 170)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Manchow Veg Soup</span><span>₹150</span><button onclick="addToCart('Manchow Veg Soup', 150)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Manchow Chicken Soup</span><span>₹180</span><button onclick="addToCart('Manchow Chicken Soup', 180)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Lemon Coriander Soup</span><span>₹130</span><button onclick="addToCart('Lemon Coriander Soup', 130)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Veg Clear Soup</span><span>₹110</span><button onclick="addToCart('Veg Clear Soup', 110)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Chicken Clear Soup</span><span>₹150</span><button onclick="addToCart('Chicken Clear Soup', 150)">Add</button>
+          </div>
+          <div class="menu-item soup">
+            <span>Mushroom Soup</span><span>₹140</span><button onclick="addToCart('Mushroom Soup', 140)">Add</button>
+          </div>
+
+          <div class="menu-item dessert">
+            <span>Gulab Jamun</span><span>₹90</span><button onclick="addToCart('Gulab Jamun', 90)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Rasgulla</span><span>₹90</span><button onclick="addToCart('Rasgulla', 90)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Ice Cream</span><span>₹80</span><button onclick="addToCart('Ice Cream', 80)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Brownie with Ice Cream</span><span>₹150</span><button onclick="addToCart('Brownie with Ice Cream', 150)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Fruit Salad</span><span>₹100</span><button onclick="addToCart('Fruit Salad', 100)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Chocolate Pastry</span><span>₹120</span><button onclick="addToCart('Chocolate Pastry', 120)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Cheesecake</span><span>₹180</span><button onclick="addToCart('Cheesecake', 180)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Kheer</span><span>₹110</span><button onclick="addToCart('Kheer', 110)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Falooda</span><span>₹160</span><button onclick="addToCart('Falooda', 160)">Add</button>
+          </div>
+          <div class="menu-item dessert">
+            <span>Shahi Tukda</span><span>₹140</span><button onclick="addToCart('Shahi Tukda', 140)">Add</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="section order-bg">
+      <div class="overlay-box">
+        <h2>Online Order Checkout</h2>
+        <form id="checkoutForm">
+          <input type="text" id="customerName" placeholder="Full Name" required />
+          <input type="tel" id="customerPhone" placeholder="Phone Number" required />
+          <textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
+          <button type="submit">Place Order</button>
+        </form>
+        <p id="checkoutMessage"></p>
+      </div>
+    </section>
+
+    <section id="cart" class="section cart-bg">
+      <div class="overlay-box cart-box">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <h3 id="totalBill">Total: ₹0</h3>
+        <button onclick="checkout()">Checkout</button>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-bg">
+      <div class="overlay-box">
+        <h2>Contact Us</h2>
+        <p><strong>📍 Address:</strong> The Haveli, Park Street, Kolkata, West Bengal, India</p>
+        <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+        <p><strong>📧 Email:</strong> thehaveli.restaurant@gmail.com</p>
+        <p><strong>🕒 Timings:</strong> 11:00 AM – 11:00 PM (All Days)</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 The Haveli | Designed with ❤️ using HTML, CSS & JavaScript</p>
+    </footer>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
